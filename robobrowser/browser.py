@@ -5,7 +5,9 @@ Robotic browser.
 import re
 import requests
 from bs4 import BeautifulSoup
-from werkzeug import cached_property
+# https://github.com/jarus/flask-testing/issues/143
+import werkzeug
+cached_property = werkzeug.utils.cached_property
 from requests.packages.urllib3.util.retry import Retry
 
 from robobrowser import helpers
